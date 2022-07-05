@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+#board {
+  display: flex;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(175, 143, 225);
+    flex-wrap: wrap;
+}
+
+.game-cell {
+  width: 125px;
+    height: 125px;
+    border: 2px solid white;
+}
+
+.image {
+  background-image: url('../img/goblin.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
