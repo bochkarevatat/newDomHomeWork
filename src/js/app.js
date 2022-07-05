@@ -2,6 +2,7 @@
 export default class Game {
   constructor(boardEl) {
     this.boardEl = boardEl;
+    this.boardsCells = [];
     this.random = 0;
   }
 
@@ -17,14 +18,14 @@ export default class Game {
 
   randomImg() {
     setInterval(() => {
-      const boardsCells = [...document.querySelectorAll('.game-cell')];
-      boardsCells.forEach((elem) => {
+      this.boardsCells = [...document.querySelectorAll('.game-cell')];
+      this.boardsCells.forEach((elem) => {
         if (elem.classList.contains('image')) {
           elem.classList.remove('image');
         }
       });
-      const random = Math.floor(Math.random() * boardsCells.length);
-      return boardsCells[random].classList.add('image');
+      const random = Math.floor(Math.random() * this.boardsCells.length);
+      return this.boardsCells[random].classList.add('image');
     }, 1000);
   }
 }
